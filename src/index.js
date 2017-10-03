@@ -7,8 +7,17 @@ import routes from './routes';
 
 let app = express();
 app.server = http.createServer(app);
+
 //middleware
+
+//parse application/json
+app.use(bodyParser.json({
+  limit : config.bodyLimit
+}));
+
 //passport config
+
+
 //api routes v1
 app.use('/v1', routes);
 
